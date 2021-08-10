@@ -1,21 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { View, Text, Image, StyleSheet } from 'react-native'
+import { FontAwesome } from '@expo/vector-icons'
+import logo from './assets/vista.jpg'
 
-export default function App() {
+
+function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Image source={logo} style={styles.imagem} />
+      <Text style={styles.title}><FontAwesome name="user-circle" size={50} /> Olá Mundo</Text>
+      <FontAwesome.Button
+        name="shopping-cart"
+        style={styles.botao}
+      >Comprar</FontAwesome.Button>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  imagem: {
+    width: '90%',
+    height: 300,
+    resizeMode: 'center'
   },
-});
+  botao: {
+    width: 150,
+    height: 30
+  },
+  title:{
+    fontSize: 30,
+    color: "#1A237E"
+
+  }
+})
+
+export default App
